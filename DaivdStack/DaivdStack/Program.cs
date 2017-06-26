@@ -9,31 +9,35 @@ namespace DaivdStack
     class Program
     {
         static void Main(string[] args)
-        { /*
-            DoublyLinkedList<string> linklist = new DoublyLinkedList<string>();
+        { 
+            DavidStack<string> stack = new DavidStack<string>();
             while (true)
             {
                 Console.WriteLine("_____________________________");
                 Console.WriteLine("Operation: ");
                 string operation = Console.ReadLine();
 
-                if (operation.ToLower() == "removefromfront")
+                if (operation.ToLower() == "pop")
                 {
-                    linklist.removeFromFront();
+                    Console.WriteLine(stack.Pop());
                 }
-                else if (operation.ToLower() == "removefromend")
+                else if (operation.ToLower() == "peek")
                 {
-                    linklist.removeFromEnd();
+                    Console.WriteLine(stack.Peek());
                 }
-                else if (operation.ToLower() == "print")
+                else if (operation.ToLower() == "tostring")
                 {
-                    linklist.ToString();
+                    Console.WriteLine(stack.ToString());
+                }
+                else if (operation.ToLower() == "isempty")
+                {
+                    Console.WriteLine(stack.IsEmpty());
                 }
                 else if (operation.ToLower() == "help")
                 {
                     Console.WriteLine("Some commands are: \n addtofront \n addtoend \n removefromfront \n removefromend \n removeat \n print");
                 }
-                else if (operation.ToLower() != "addtofront" && operation.ToLower() != "addtoend" && operation.ToLower() != "removeat" && operation.ToLower() != "removeat")
+                else if (operation.ToLower() != "push")
                 {
                     Console.WriteLine("Invalid command, type help for a list of commands");
                 }
@@ -42,20 +46,9 @@ namespace DaivdStack
                     Console.WriteLine("Arguments: ");
                     string arguments = Console.ReadLine();
 
-                    if (operation.ToLower() == "addtofront")
-                    {
-                        linklist.AddToFront(arguments);
-                    }
-                    else if (operation.ToLower() == "addtoend")
-                    {
-                        linklist.AddtoEnd(arguments);
-                    }
-                    else// (operation.ToLower() == "removeat")
-                    {
-                        linklist.removeAt(int.Parse(arguments));
-                    }
-                
-            }*/
+                    stack.Push(arguments);
+                }
+            }
         }
     }
 }
